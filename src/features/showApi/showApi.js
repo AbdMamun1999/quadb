@@ -2,14 +2,14 @@ import { apiSlice } from "../api/apiSlice";
 
 export const scoreApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    getAllScore: builder.query({
+    getAllShow: builder.query({
       query: () => ({
-        url: "/shows?q=all",
+        url: "/search/shows?q=all",
         method: "GET",
       }),
     }),
 
-    getSingleScore: builder.query({
+    getAShow: builder.query({
       query: (id) => ({
         url: `/shows/${id}`,
         method: "GET",
@@ -18,4 +18,4 @@ export const scoreApi = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useGetAllScoreQuery, useGetSingleScoreQuery } = scoreApi;
+export const { useGetAllShowQuery, useGetAShowQuery } = scoreApi;
